@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class FruitBox extends FruitShop {
+public class FruitBox extends FruitShopManager {
 
     public enum ripeningSeasonEnum{
         SUMMER,
