@@ -29,7 +29,7 @@ class FruitShopManagerTest {
     @Test
     //in ascending order by colour
     public void sortSummerFruitsByColourTestInAscendingOrder(){
-        List<FruitBox> actualFruitBoxSortedByColour = manager.sortSummerFruitsByColour(fruitBoxes,false);
+        List<FruitBox> actualFruitBoxSortedByColour = manager.sortFruitsByColour(fruitBoxes,RipeningSeason.SUMMER,false);
         List<FruitBox> expectedFruitBoxSortedByColour = new ArrayList<>(Arrays.asList(
                 new FruitBox(new Berry("Blackberry", "black", RipeningSeason.SUMMER, 38)),
                 new FruitBox(new Citrus("Orange", "orange", RipeningSeason.SUMMER, 39)),
@@ -42,7 +42,7 @@ class FruitShopManagerTest {
     @Test
     //in descending order by colour
     public void sortSummerFruitsByColourTestInDescendingOrder(){
-        List<FruitBox> actualFruitBoxSortedByColour = manager.sortSummerFruitsByColour(fruitBoxes,true);
+        List<FruitBox> actualFruitBoxSortedByColour = manager.sortFruitsByColour(fruitBoxes, RipeningSeason.SUMMER,true);
         List<FruitBox> expectedFruitBoxSortedByColour = new ArrayList<>(Arrays.asList(
                 new FruitBox(new Berry("Strawberry", "red", RipeningSeason.SUMMER, 32)),
                 new FruitBox(new Citrus("Orange", "orange", RipeningSeason.SUMMER, 39)),
@@ -55,7 +55,7 @@ class FruitShopManagerTest {
     @Test
     //in ascending order by price
     public void sortSummerFruitsByPriceTestInAscendingOrder(){
-        List<FruitBox> actualFruitBoxSortedByPrice = manager.sortSummerFruitsByPrice(fruitBoxes,false);
+        List<FruitBox> actualFruitBoxSortedByPrice = manager.sortFruitsByPrice(fruitBoxes,RipeningSeason.SUMMER,false);
         List<FruitBox> expectedFruitBoxSortedByPrice = new ArrayList<>(Arrays.asList(
                 new FruitBox(new Berry("Strawberry", "red", RipeningSeason.SUMMER, 32)),
                 new FruitBox(new Berry("Blackberry", "black", RipeningSeason.SUMMER, 38)),
@@ -68,7 +68,7 @@ class FruitShopManagerTest {
     @Test
     //in descending order by price
     public void sortSummerFruitsByPriceTestInDescendingOrder(){
-        List<FruitBox> actualFruitBoxSortedByPrice = manager.sortSummerFruitsByPrice(fruitBoxes,true);
+        List<FruitBox> actualFruitBoxSortedByPrice = manager.sortFruitsByPrice(fruitBoxes,RipeningSeason.SUMMER,true);
         List<FruitBox> expectedFruitBoxSortedByPrice = new ArrayList<>(Arrays.asList(
                 new FruitBox(new Citrus("Orange", "orange", RipeningSeason.SUMMER, 39)),
                 new FruitBox(new Berry("Blackberry", "black", RipeningSeason.SUMMER, 38)),
