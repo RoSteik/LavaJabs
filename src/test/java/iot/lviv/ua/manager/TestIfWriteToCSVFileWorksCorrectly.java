@@ -38,6 +38,10 @@ class TestIfWriteToCSVFileWorksCorrectly {
             FruitBoxWriter.writeToCSVFile(manager.sortFruitsByPrice(fruitBoxes, RipeningSeason.SUMMER,  true));
 
             assertEquals(expectedBufferedReader.readLine(), actualBufferedReader.readLine());
+            assertEquals(expectedBufferedReader.readLine(), actualBufferedReader.readLine());
+            assertEquals(expectedBufferedReader.readLine(), actualBufferedReader.readLine());
+            assertEquals(expectedBufferedReader.readLine(), actualBufferedReader.readLine());
+            assertEquals(expectedBufferedReader.readLine(), actualBufferedReader.readLine());
 
         } catch (IOException e){
             e.printStackTrace();

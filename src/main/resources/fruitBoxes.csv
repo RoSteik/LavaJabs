@@ -1,4 +1,4 @@
-Fruit, Price
-Orange, 39
-Blackberry, 38
-Strawberry, 32
+Fruit, Price, Is there pits in fruit?
+Orange, 39, true
+Blackberry, 38, false
+Strawberry, 32, false
