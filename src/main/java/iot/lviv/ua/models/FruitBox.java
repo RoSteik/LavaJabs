@@ -13,4 +13,9 @@ import java.util.Objects;
 @AllArgsConstructor
 public class FruitBox  {
     private Fruit fruit;
+    private int mass;
+
+    public FruitBox(Fruit fruit){
+        this.fruit = fruit;
+    }
 }

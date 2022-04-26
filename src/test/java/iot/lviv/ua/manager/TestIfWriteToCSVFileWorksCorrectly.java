@@ -1,17 +1,12 @@
 package iot.lviv.ua.manager;
 
-import iot.lviv.ua.models.Berry;
-import iot.lviv.ua.models.Citrus;
-import iot.lviv.ua.models.FruitBox;
-import iot.lviv.ua.models.RipeningSeason;
+import iot.lviv.ua.models.*;
 import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 

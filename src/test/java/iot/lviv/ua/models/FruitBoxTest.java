@@ -8,15 +8,15 @@ class FruitBoxTest {
 
     @Test
     public void toStringTest(){
-        FruitBox actualFruitBox1 =  new FruitBox(new Berry("Strawberry", "red", RipeningSeason.SUMMER, 50));
-        FruitBox actualFruitBox2 = new FruitBox(new Citrus("Orange", "orange", RipeningSeason.AUTUMN, 52));
-        FruitBox actualFruitBox3 = new FruitBox(new Berry("Blackberry", "black", RipeningSeason.SUMMER, 47));
-        FruitBox actualFruitBox4 = new FruitBox(new Citrus("Lime", "green", RipeningSeason.SUMMER, 55));
+        FruitBox actualFruitBox1 =  new FruitBox(new Berry("Strawberry", "red", RipeningSeason.SUMMER, 50),23);
+        FruitBox actualFruitBox2 = new FruitBox(new Citrus("Orange", "orange", RipeningSeason.AUTUMN, 52),24);
+        FruitBox actualFruitBox3 = new FruitBox(new Berry("Blackberry", "black", RipeningSeason.SUMMER, 47),25);
+        FruitBox actualFruitBox4 = new FruitBox(new Citrus("Lime", "green", RipeningSeason.SUMMER, 55),20);
 
-        assertEquals("Fruit - Strawberry, price - 50", actualFruitBox1.toString());
-        assertEquals("Fruit - Orange, price - 52", actualFruitBox2.toString());
-        assertEquals("Fruit - Blackberry, price - 47", actualFruitBox3.toString());
-        assertEquals("Fruit - Lime, price - 55", actualFruitBox4.toString());
+        assertEquals("FruitBox(fruit=Fruit(nameOfFruit=Strawberry, colourOfFruit=red, ripeningSeason=SUMMER, price=50), mass=23)", actualFruitBox1.toString());
+        assertEquals("FruitBox(fruit=Fruit(nameOfFruit=Orange, colourOfFruit=orange, ripeningSeason=AUTUMN, price=52), mass=24)", actualFruitBox2.toString());
+        assertEquals("FruitBox(fruit=Fruit(nameOfFruit=Blackberry, colourOfFruit=black, ripeningSeason=SUMMER, price=47), mass=25)", actualFruitBox3.toString());
+        assertEquals("FruitBox(fruit=Fruit(nameOfFruit=Lime, colourOfFruit=green, ripeningSeason=SUMMER, price=55), mass=20)", actualFruitBox4.toString());
 
     }
 
