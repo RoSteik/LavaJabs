@@ -32,11 +32,9 @@ class TestIfWriteToCSVFileWorksCorrectly {
 
             FruitBoxWriter.writeToCSVFile(manager.sortFruitsByPrice(fruitBoxes, RipeningSeason.SUMMER,  true));
 
-            assertEquals(expectedBufferedReader.readLine(), actualBufferedReader.readLine());
-            assertEquals(expectedBufferedReader.readLine(), actualBufferedReader.readLine());
-            assertEquals(expectedBufferedReader.readLine(), actualBufferedReader.readLine());
-            assertEquals(expectedBufferedReader.readLine(), actualBufferedReader.readLine());
-            assertEquals(expectedBufferedReader.readLine(), actualBufferedReader.readLine());
+            for(int i = 0; i<manager.sortFruitsByPrice(fruitBoxes, RipeningSeason.SUMMER ,  true).size() + 1; i++){
+                assertEquals(expectedBufferedReader.readLine(), actualBufferedReader.readLine());
+            }
 
         } catch (IOException e){
             e.printStackTrace();

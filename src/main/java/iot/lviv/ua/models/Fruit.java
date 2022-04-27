@@ -8,14 +8,10 @@ package iot.lviv.ua.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
-import java.util.Objects;
 
 @Data
 @AllArgsConstructor
-public class Fruit{
+public class Fruit {
     private  String nameOfFruit;
     private  String colourOfFruit;
     private RipeningSeason ripeningSeason;

@@ -25,6 +25,6 @@ public class Citrus extends Fruit {
         return super.getHeaders() + ", Is there pits in fruit?";
     }
     public String toCSV(){
-        return super.toCSV() +", " + this.isPitsInCitrus;
+        return super.toCSV() +", " + this.isPitsInCitrus ;
     }
 }
