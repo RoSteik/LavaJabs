@@ -25,6 +25,7 @@ class TestIfWriteToCSVFileWorksCorrectly {
                 new FruitBox(new Berry("Blackberry", "black", RipeningSeason.SUMMER, 38))
         ));
 
+        //compare two csv files
         try(FileReader expectedFileReader = new FileReader("C:\\Users\\Administrator\\IdeaProjects\\Laboratorna_2_3_Java\\src\\main\\resources\\expectedFruitBoxes.csv");
             BufferedReader expectedBufferedReader = new BufferedReader(expectedFileReader);
             FileReader actualFileReader = new FileReader("C:\\Users\\Administrator\\IdeaProjects\\Laboratorna_2_3_Java\\src\\main\\resources\\fruitBoxes.csv");
@@ -32,8 +33,30 @@ class TestIfWriteToCSVFileWorksCorrectly {
 
             FruitBoxWriter.writeToCSVFile(manager.sortFruitsByPrice(fruitBoxes, RipeningSeason.SUMMER,  true));
 
-            for(int i = 0; i<manager.sortFruitsByPrice(fruitBoxes, RipeningSeason.SUMMER ,  true).size() + 1; i++){
+            String line1 = expectedBufferedReader.readLine();
+            String line2 = actualBufferedReader.readLine();
+            boolean areEqual = true;
+            int lineNum = 1;
+
+            while (line1 != null || line2 != null) {
+                if(line1 == null || line2 == null) {
+                    areEqual = false;
+                    break;
+                }
+                else if(! line1.equalsIgnoreCase(line2)) {
+                    areEqual = false;
+                    break;
+                }
+
+                line1 = expectedBufferedReader.readLine();
+                line2 = actualBufferedReader.readLine();
+                lineNum++;
+            }
+
+            if(areEqual) {
                 assertEquals(expectedBufferedReader.readLine(), actualBufferedReader.readLine());
+            } else {
+                fail();
             }
 
         } catch (IOException e){
