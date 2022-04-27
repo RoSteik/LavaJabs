@@ -36,6 +36,7 @@ class TestIfWriteToCSVFileWorksCorrectly {
             String line1 = expectedBufferedReader.readLine();
             String line2 = actualBufferedReader.readLine();
             boolean areEqual = true;
+            int lineNum = 1;
 
             while (line1 != null || line2 != null) {
                 if(line1 == null || line2 == null) {
@@ -49,12 +50,13 @@ class TestIfWriteToCSVFileWorksCorrectly {
 
                 line1 = expectedBufferedReader.readLine();
                 line2 = actualBufferedReader.readLine();
+                lineNum++;
             }
 
             if(areEqual) {
                 assertEquals(expectedBufferedReader.readLine(), actualBufferedReader.readLine());
             } else {
-                fail();
+                fail("Two files have different content. They differ at line " + lineNum);
             }
 
         } catch (IOException e){
