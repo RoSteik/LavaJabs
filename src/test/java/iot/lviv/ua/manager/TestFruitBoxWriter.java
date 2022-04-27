@@ -10,10 +10,10 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TestIfWriteToCSVFileWorksCorrectly {
+class TestFruitBoxWriter {
 
     @Test
-    public void testWriteToCSVFileMethod (){
+    public void testIfWriteToCSVFileWorksCorrectly(){
 
         FruitShopManager manager = new FruitShopManager();
         List<FruitBox> fruitBoxes = new ArrayList<>(Arrays.asList(
