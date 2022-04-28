@@ -32,7 +32,7 @@ public class FruitShopManager {
                 .sorted(Comparator.comparing(fruitBox -> fruitBox.getFruit().getPrice()))
                 .collect(Collectors.toList());
 
-        if(isDescendingOrderNeeded){
+        if (isDescendingOrderNeeded) {
             Collections.reverse(sortedFruitBoxesInAscendingOrderByPrice);
         }
 
