@@ -1,7 +1,10 @@
 package iot.lviv.ua;
 
+
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -27,9 +30,21 @@ public class FruitBox extends FruitShopManager {
     }
 
     @Override
-    public String toString()
-    {
-        return this.nameOfFruitInBox + " " +  this.colourOfFruitInBox + " "
-                + this.ripeningSeason + " , Price - " +  this.price;
+    public String toString() {
+        return getNameOfFruitInBox() + ", " +  getColourOfFruitInBox()+ ", "
+                +  "Price per kilo - " + getPrice();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FruitBox fruitBox = (FruitBox) o;
+        return price == fruitBox.price && Objects.equals(nameOfFruitInBox, fruitBox.nameOfFruitInBox) && Objects.equals(colourOfFruitInBox, fruitBox.colourOfFruitInBox) && ripeningSeason == fruitBox.ripeningSeason;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nameOfFruitInBox, colourOfFruitInBox, ripeningSeason, price);
     }
 }
