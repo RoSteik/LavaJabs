@@ -25,4 +25,4 @@ hs_err_pid*
 *.idea
 *out
 *.iml
-*target/
+*target/classes/META-INF/MANIFEST.MF
