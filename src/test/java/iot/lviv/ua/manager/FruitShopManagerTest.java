@@ -12,7 +12,6 @@ import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class FruitShopManagerTest {
     FruitShopManager manager = new FruitShopManager();
@@ -29,14 +28,14 @@ class FruitShopManagerTest {
     @Test
     //in ascending order by colour
     public void sortSummerFruitsByColourTestInAscendingOrder(){
-        List<FruitBox> actualFruitBoxSortedByColour = manager.sortFruitsByColour(fruitBoxes,RipeningSeason.SUMMER,false);
-        List<FruitBox> expectedFruitBoxSortedByColour = new ArrayList<>(Arrays.asList(
+        List<FruitBox> actualFruitBoxSortedByColourList = manager.sortFruitsByColour(fruitBoxes,RipeningSeason.SUMMER,false);
+        List<FruitBox> expectedFruitBoxSortedByColourList = new ArrayList<>(Arrays.asList(
                 new FruitBox(new Berry("Blackberry", "black", RipeningSeason.SUMMER, 38)),
                 new FruitBox(new Citrus("Orange", "orange", RipeningSeason.SUMMER, 39)),
                 new FruitBox(new Berry("Strawberry", "red", RipeningSeason.SUMMER, 32))
         ));
 
-        assertThat(actualFruitBoxSortedByColour, is(expectedFruitBoxSortedByColour));
+        assertThat(actualFruitBoxSortedByColourList, is(expectedFruitBoxSortedByColourList));
     }
 
     @Test
@@ -55,7 +54,7 @@ class FruitShopManagerTest {
     @Test
     //in ascending order by price
     public void sortSummerFruitsByPriceTestInAscendingOrder(){
-        List<FruitBox> actualFruitBoxSortedByPrice = manager.sortFruitsByPrice(fruitBoxes,RipeningSeason.SUMMER,false);
+        List<FruitBox> actualFruitBoxSortedByPrice = manager.sortFruitsByPrice(fruitBoxes, RipeningSeason.SUMMER,false);
         List<FruitBox> expectedFruitBoxSortedByPrice = new ArrayList<>(Arrays.asList(
                 new FruitBox(new Berry("Strawberry", "red", RipeningSeason.SUMMER, 32)),
                 new FruitBox(new Berry("Blackberry", "black", RipeningSeason.SUMMER, 38)),

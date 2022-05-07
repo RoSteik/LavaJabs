@@ -18,11 +18,11 @@ public class Fruit {
     private  int price; //per kilogram
 
 
-    public  Fruit(){}
+    public  Fruit() { }
     public String getHeaders() {
         return "Fruit, Price";
     }
-    public String toCSV(){
+    public String toCSV() {
         return this.getNameOfFruit() + ", " + this.getPrice();
     }
 
