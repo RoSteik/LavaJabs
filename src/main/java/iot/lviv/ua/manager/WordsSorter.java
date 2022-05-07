@@ -58,7 +58,7 @@ public class WordsSorter {
         int[] numbersOfInputLetterInWords = new int[words.size()];
 
         List<WordAndNumber> wordWithNumberList = new LinkedList<>();
-        List<String> result = new LinkedList<>();
+        List<String> result = new LinkedList<>(); // - to store sorted words
 
         //Storing words that have input letter in numbersOfLetterInWords - array
         for (int i = 0; i < words.size(); i++) {
