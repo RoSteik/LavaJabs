@@ -42,6 +42,7 @@ public class WordsSorter {
 
     private List<String> divideTextIntoWords(StringBuilder text) {
         List<String> words = new LinkedList<>();
+
         Pattern pattern = Pattern.compile("[^\\s(.!?,:;\")]+");
         Matcher matcher = pattern.matcher(text);
 
@@ -50,6 +51,7 @@ public class WordsSorter {
             text = new StringBuilder(text.substring(matcher.end()));
             matcher = pattern.matcher(text);
         }
+
         return words;
     }
 
@@ -58,7 +60,7 @@ public class WordsSorter {
         int[] numbersOfInputLetterInWords = new int[words.size()];
 
         List<WordAndNumber> wordWithNumberList = new LinkedList<>();
-        List<String> result = new LinkedList<>(); // - to store sorted words
+        List<String> sortedWordsList = new LinkedList<>(); // - to store result
 
         //Storing words that have input letter in numbersOfLetterInWords - array
         for (int i = 0; i < words.size(); i++) {
@@ -76,10 +78,10 @@ public class WordsSorter {
         wordWithNumberList.sort(new WordAndNumber());
 
         for (WordAndNumber value : wordWithNumberList) {
-            result.add(value.word);
+            sortedWordsList.add(value.word);
         }
 
-        return result;
+        return sortedWordsList;
     }
 
 }
