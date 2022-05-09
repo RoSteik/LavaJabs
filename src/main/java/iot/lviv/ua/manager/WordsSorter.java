@@ -35,7 +35,6 @@ public class WordsSorter {
             } else if (wn1.numberOfInputLetterInWord > wn2.numberOfInputLetterInWord) {
                 return 1;
             }
-
             return -1;
         }
     }
