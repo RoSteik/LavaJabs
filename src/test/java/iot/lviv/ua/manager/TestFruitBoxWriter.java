@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class TestFruitBoxWriter {
 
     @Test
-    public void testIfWriteToCSVFileWorksCorrectly(){
+    public void testIfWriteToCSVFileWorksCorrectly() {
 
         FruitShopManager manager = new FruitShopManager();
         List<FruitBox> fruitBoxes = new ArrayList<>(Arrays.asList(
@@ -26,9 +26,9 @@ class TestFruitBoxWriter {
         ));
 
         //compare two csv files
-        try(FileReader expectedFileReader = new FileReader("C:\\Users\\Administrator\\IdeaProjects\\Laboratorna_2_3_Java\\src\\main\\resources\\expectedFruitBoxes.csv");
+        try (FileReader expectedFileReader = new FileReader("src/main/resources/expectedFruitBoxes.csv");
             BufferedReader expectedBufferedReader = new BufferedReader(expectedFileReader);
-            FileReader actualFileReader = new FileReader("C:\\Users\\Administrator\\IdeaProjects\\Laboratorna_2_3_Java\\src\\main\\resources\\fruitBoxes.csv");
+            FileReader actualFileReader = new FileReader("src/main/resources/fruitBoxes.csv");
             BufferedReader actualBufferedReader = new BufferedReader(actualFileReader)){
 
             FruitBoxWriter.writeToCSVFile(manager.sortFruitsByPrice(fruitBoxes, RipeningSeason.SUMMER,  true));
@@ -43,7 +43,7 @@ class TestFruitBoxWriter {
                     areTwoLinesEqual = false;
                     break;
                 }
-                else if(!line1.equalsIgnoreCase(line2)) {
+                else if (!line1.equalsIgnoreCase(line2)) {
                     areTwoLinesEqual = false;
                     break;
                 }
@@ -53,7 +53,7 @@ class TestFruitBoxWriter {
                 numberOfLine++;
             }
 
-            if(areTwoLinesEqual) {
+            if (areTwoLinesEqual) {
                 assertEquals(expectedBufferedReader.readLine(), actualBufferedReader.readLine());
             } else {
                 fail("Two files have different content. They differ at line " + numberOfLine);

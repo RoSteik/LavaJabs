@@ -17,11 +17,11 @@ import java.util.List;
 public class FruitBoxWriter {
     //writes fruitBoxes to csv file
     public static void writeToCSVFile(List<FruitBox> fruitBoxes) throws IOException {
-        try(FileWriter fileWriter = new FileWriter("C:\\Users\\Administrator\\IdeaProjects\\Laboratorna_2_3_Java\\src\\main\\resources\\fruitBoxes.csv")){
+        try (FileWriter fileWriter = new FileWriter("src/main/resources/fruitBoxes.csv")) {
             String previousClassName = "";
 
-            for(var fruitBox: fruitBoxes){
-                if(!fruitBox.getClass().getSimpleName().equals(previousClassName)){
+            for (var fruitBox: fruitBoxes){
+                if (!fruitBox.getClass().getSimpleName().equals(previousClassName)) {
                     fileWriter.write(fruitBox.getFruit().getHeaders());
                     fileWriter.write("\r\n");
                     previousClassName = fruitBox.getClass().getSimpleName();
@@ -29,7 +29,7 @@ public class FruitBoxWriter {
                 fileWriter.write(fruitBox.getFruit().toCSV());
                 fileWriter.write("\r\n");
             }
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
