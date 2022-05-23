@@ -20,7 +20,7 @@ public class FruitBoxWriter {
         try (FileWriter fileWriter = new FileWriter("src/main/resources/fruitBoxes.csv")) {
             String previousClassName = "";
 
-            for (var fruitBox: fruitBoxes){
+            for (var fruitBox: fruitBoxes) {
                 if (!fruitBox.getClass().getSimpleName().equals(previousClassName)) {
                     fileWriter.write(fruitBox.getFruit().getHeaders());
                     fileWriter.write("\r\n");

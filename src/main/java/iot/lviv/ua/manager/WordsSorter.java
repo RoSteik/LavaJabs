@@ -1,8 +1,8 @@
 /**
-  Created by RoSteik (Telegram: @RoSteik)
-  Project name: Laboratorna_2_3_Java
-  Package name: iot.lviv.ua.manager
-  Class: RegEx
+ * Created by RoSteik (Telegram: @RoSteik)
+ * Project name: Laboratorna_2_3_Java
+ * Package name: iot.lviv.ua.manager
+ * Class: WordsSorter
  */
 package iot.lviv.ua.manager;
 
@@ -39,27 +39,27 @@ public class WordsSorter {
         }
     }
 
-    private List<String> divideTextIntoWords(StringBuilder text) {
-        List<String> words = new LinkedList<>();
+    private List<String> convertTextIntoWordsList(StringBuilder text) {
+        List<String> wordsList = new LinkedList<>();
 
         Pattern pattern = Pattern.compile("[^\\s(.!?,:;\")]+");
         Matcher matcher = pattern.matcher(text);
 
         while (matcher.find()) {
-            words.add(text.substring(matcher.start(), matcher.end()));
+            wordsList.add(text.substring(matcher.start(), matcher.end()));
             text = new StringBuilder(text.substring(matcher.end()));
             matcher = pattern.matcher(text);
         }
 
-        return words;
+        return wordsList;
     }
 
     public List<String> sortWordsInText(StringBuilder text, char letter) {
-        List<String> words = divideTextIntoWords(text);
-        int[] numbersOfInputLetterInWords = new int[words.size()];
-
         List<WordAndNumber> wordWithNumberList = new LinkedList<>();
         List<String> sortedWordsList = new LinkedList<>(); // - to store result
+
+        List<String> words = convertTextIntoWordsList(text);
+        int[] numbersOfInputLetterInWords = new int[words.size()];
 
         //Storing words that have input letter in numbersOfLetterInWords - array
         for (int i = 0; i < words.size(); i++) {
@@ -76,8 +76,8 @@ public class WordsSorter {
         }
         wordWithNumberList.sort(new WordAndNumber());
 
-        for (WordAndNumber value : wordWithNumberList) {
-            sortedWordsList.add(value.word);
+        for (WordAndNumber wordAndNumber : wordWithNumberList) {
+            sortedWordsList.add(wordAndNumber.word);
         }
 
         return sortedWordsList;
