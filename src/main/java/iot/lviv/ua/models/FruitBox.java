@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class FruitBox  {
+public class FruitBox {
     private Fruit fruit;
     private int mass;
 

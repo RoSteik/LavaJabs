@@ -9,7 +9,9 @@ package iot.lviv.ua.models;
 public class Berry extends Fruit {
 
     private boolean isPitsInCitrus = false;
-    public Berry() { }
+
+    public Berry() {
+    }
 
     public Berry(String nameOfFruit, String colourOfFruit, RipeningSeason ripeningSeason, int price) {
         super(nameOfFruit, colourOfFruit, ripeningSeason, price);
@@ -19,9 +21,11 @@ public class Berry extends Fruit {
         super(nameOfFruit, colourOfFruit, ripeningSeason, price);
         this.isPitsInCitrus = isPitsInCitrus;
     }
+
     public String getHeaders() {
         return super.getHeaders() + ", Is there pits in fruit?";
     }
+
     public String toCSV() {
         return super.toCSV() + ", " + this.isPitsInCitrus;
     }

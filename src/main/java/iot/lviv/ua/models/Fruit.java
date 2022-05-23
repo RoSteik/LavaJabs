@@ -12,16 +12,19 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Fruit {
-    private  String nameOfFruit;
-    private  String colourOfFruit;
+    private String nameOfFruit;
+    private String colourOfFruit;
     private RipeningSeason ripeningSeason;
-    private  int price; //per kilogram
+    private int price; //per kilogram
 
 
-    public  Fruit() { }
+    public Fruit() {
+    }
+
     public String getHeaders() {
         return "Fruit, Price";
     }
+
     public String toCSV() {
         return this.getNameOfFruit() + ", " + this.getPrice();
     }
